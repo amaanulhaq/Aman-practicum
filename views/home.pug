@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    h1 Custom Object Records
+    a(href='/update-cobj') Add/Update this table
+    if customObjects.length > 0
+      table
+        thead
+          tr
+            th Name
+            th Publisher
+            th Price
+            
+        tbody
+          each customObject in customObjects
+            tr
+              td= customObject.properties.name
+              td= customObject.properties.publisher
+              td= customObject.properties.price
+    else
+      p No custom object records found.
